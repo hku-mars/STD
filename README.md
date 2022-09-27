@@ -17,7 +17,9 @@
 
 
 ### Related paper
-Related paper will be available on **arxiv** soon.  
+Related paper available on **arxiv**:  
+[STD: Stable Triangle Descriptor for 3D place recognition](https://arxiv.org/abs/2209.12435)
+
 
 ### Related video
 Our accompanying video is now available on **YouTube**.
