@@ -1,0 +1,33 @@
+# pre process
+ds_size: 0.25
+maximum_corner_num: 100
+
+# key points
+plane_detection_thre: 0.01
+plane_merge_normal_thre: 0.1
+plane_merge_dis_thre: 0.3
+voxel_size: 2
+voxel_init_num: 10
+proj_image_resolution: 0.5
+proj_dis_min: 0
+proj_dis_max: 5
+corner_thre: 15
+
+
+# std descriptor
+descriptor_near_num: 20
+descriptor_min_len: 3
+descriptor_max_len: 50
+non_max_suppression_radius: 3
+std_side_resolution: 0.2
+
+# candidate search
+skip_near_num: 75
+candidate_num: 50
+sub_frame_num: 10
+vertex_diff_threshold: 0.5
+rough_dis_threshold: 0.01
+normal_threshold: 0.2
+dis_threshold: 0.5
+icp_threshold: 0.4
+

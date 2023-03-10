@@ -1,0 +1,19 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+  <rosparam command="load" file="$(find std_detector)/config/config_livox.yaml" />
+  <node 
+		pkg="std_detector" 
+		type="place_recognition_livox" 
+		name="place_recognition_livox" 
+		output="screen" 
+	/>
+  <param name="bag_path" type="string" value = "/usb/park2.bag"/>
+  <param name="pose_path" type="string" value = "/usb2/Bags/loop/avia/poses/park2_pose.txt"/>
+
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_detector)/rviz_cfg/demo.rviz" />
+  </group>
+
+</launch>

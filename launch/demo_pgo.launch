@@ -1,0 +1,21 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+  <rosparam command="load" file="$(find std_detector)/config/config_pgo.yaml" />
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_detector)/rviz_cfg/pgo.rviz" />
+  </group>
+
+  <node 
+		pkg="std_detector" 
+		type="pgo_demo" 
+		name="pgo_demo" 
+		output="screen" 
+	/>
+  <param name="lidar_path" type="string" value = "/usb/kitti/sequences/00/velodyne/"/>
+  <param name="pose_path" type="string" value = "/usb2/kitti_bags/lio_pose/kitti00_pose_lio.txt"/>
+
+
+
+</launch>
