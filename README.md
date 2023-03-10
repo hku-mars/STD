@@ -70,7 +70,7 @@ Timestamp pos_x pos_y pos_z quat_x quat_y quat_z quat_w
 ```
 where, ``Timestamp`` is the correspond sampling time stamp of a LiDAR scan, ``pose_{x,y,z}`` and ``quad_{x,y,z,w}`` are the translation and rotation (expressed used quaternion) of pose. 
 # **3. Examples**
-This reposity contains implementations of Stable Triangle Descriptor, as well as demos for place recognition and loop closure correction. For the complete pipline of online LiDAR SLAM, we will release this code along with the release of the extended version.
+This reposity contains implementations of Stable Triangle Descriptor, as well as demos for place recognition and loop closure correction. For the **complete pipline of online LiDAR SLAM**, we will release this code along with the release of the **extended version**.
 
 ## **3.1. Example-1: place recognition with KITTI Odometry dataset**
 <div align="center">
