@@ -124,7 +124,7 @@ roslaunch std_detector demo_pgo.launch
 ```
 
 # **Acknowledgments**
-In the development of R3LIVE, we stand on the shoulders of the following repositories:
+In the development of **STD_detector**, we stand on the shoulders of the following repositories:
 
 - [Scan Context](https://github.com/irapkaist/scancontext): An Egocentric Spatial Descriptor for Place Recognition within {3D} Point Cloud Map
 - [FAST-LIO](https://github.com/hku-mars/FAST_LIO): A computationally efficient and robust LiDAR-inertial odometry package.
