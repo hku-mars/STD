@@ -1,6 +1,6 @@
-# **STD(esc): A Stable Triangle Descriptor for 3D place recognition**
+# **STD: A Stable Triangle Descriptor for 3D place recognition**
 # **1. Introduction**
-**STD(esc)** is a global descriptor for 3D place recognition. For a triangle, its shape is uniquely determined by the length of the sides or included angles. Moreover, the shape of triangles is completely invariant to rigid transformations. Based on this property, we first design an algorithm to efficiently extract local key points from the 3D point cloud and encode these key points into triangular descriptors. Then, place recognition is achieved by matching the side lengths (and some other information) of the descriptors between point clouds. The point correspondence obtained from the descriptor matching pair can be further used in geometric verification, which greatly improves the accuracy of place recognition.
+**STD_detector** is a global descriptor for 3D place recognition. For a triangle, its shape is uniquely determined by the length of the sides or included angles. Moreover, the shape of triangles is completely invariant to rigid transformations. Based on this property, we first design an algorithm to efficiently extract local key points from the 3D point cloud and encode these key points into triangular descriptors. Then, place recognition is achieved by matching the side lengths (and some other information) of the descriptors between point clouds. The point correspondence obtained from the descriptor matching pair can be further used in geometric verification, which greatly improves the accuracy of place recognition.
 
 <div align="center">
     <div align="center">
@@ -11,11 +11,12 @@
   
 
 ## **1.1. Developers:**
-[Chongjian Yuan 袁崇健](https://github.com/ChongjianYUAN)， [Jiarong Lin 林家荣](www.jiaronglin.com)
+The codes of this repo are contributed by:
+[Chongjian Yuan (袁崇健)](https://github.com/ChongjianYUAN) and [Jiarong Lin (林家荣)](www.jiaronglin.com)
 
 
 ## **1.2. Related paper**
-Related paper available on **arxiv**:  
+Our paper has been accepted to [**ICRA2023**](https://www.icra2023.org/), and our preprint version is now available on **arxiv**:  
 [STD: Stable Triangle Descriptor for 3D place recognition](https://arxiv.org/abs/2209.12435)
 
 
@@ -27,8 +28,8 @@ Our accompanying video is now available on **YouTube**.
 
 # **2. Prerequisites**
 
-## **2.1 Ubuntu and ROS**
-We tested our code on Ubuntu18.04 with ROS melodic and Ubuntu20.04 with noetic. Additional ROS package is required:
+## **2.1 Ubuntu and [ROS](https://www.ros.org/)**
+We tested our code on Ubuntu18.04 with ros melodic and Ubuntu20.04 with noetic. Additional ROS package is required:
 ```
 sudo apt-get install ros-xxx-pcl-conversions
 ```
@@ -56,7 +57,7 @@ sudo apt install libgtsam-dev libgtsam-unstable-dev
 ## **2.5 Prepare for the data**
 Since this repo does not implement any method (i.e., LOAM, LIO, etc) for solving the pose for registering the LiDAR scan. So, you have to prepare two set of data for reproducing our results, include: **1) the LiDAR point cloud data. 2) the point cloud registration pose.**
 
-### **2.5.1 Download our Example data**
+### **2.5.1. Download our Example data**
 Departure from the purpose of convenience, we provide two sets of data for your fast evaluation, which can be downloaded from [**OneDrive**](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/ycj1_connect_hku_hk/EpIDIgeOD05HpZZouhP74IsBfHD9oDibPe1M0JWUyMnfew?e=3AXA9L) and [**BaiduNetDisk(百度网盘)**](https://pan.baidu.com/s/1eYqrmaD0kskyYco2l1n8MA?pwd=xnmr)
 
 
@@ -123,9 +124,27 @@ roslaunch std_detector demo_pgo.launch
 ```
 
 # **Acknowledgments**
-Thanks for [Scan Context](https://github.com/irapkaist/scancontext)
+In the development of R3LIVE, we stand on the shoulders of the following repositories:
+
+- [Scan Context](https://github.com/irapkaist/scancontext): An Egocentric Spatial Descriptor for Place Recognition within {3D} Point Cloud Map
+- [FAST-LIO](https://github.com/hku-mars/FAST_LIO): A computationally efficient and robust LiDAR-inertial odometry package.
+- [VoxelMap](https://github.com/hku-mars/VoxelMap): An efficient and probabilistic adaptive(coarse-to-fine) voxel mapping method for 3D LiDAR.
+- [R3LIVE](https://github.com/hku-mars/r2live): A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual tightly-coupled state Estimation and mapping package
 
 # **Contact Us**
 We are still working on improving the performance and reliability of our codes. For any technical issues, please contact us via email Chongjian Yuan < ycj1@connect.hku.hk >, Jiarong Lin < ziv.lin.ljr@gmail.com >.
 
 For commercial use, please contact Dr. Fu Zhang < fuzhang@hku.hk >
+
+
+# **License**
+The source code of this package is released under [**GPLv2**](http://www.gnu.org/licenses/) license. We only allow it free for personal and academic usage. For commercial use, please contact us to negotiate a different license.
+
+We are still working on improving the performance and reliability of our codes. For any technical issues, please contact me via email Jiarong Lin < ziv.lin.ljrATgmail.com >.
+
+If you use any code of this repo in your academic research, please cite **at least one** of our papers:
+```
+[1] Yuan, C., Lin, J., Zou, Z., Hong, X., & Zhang, F.. "STD: Stable Triangle Descriptor for 3D place recognition."
+[2] Xu, W., Cai, Y., He, D., Lin, J., & Zhang, F. "Fast-lio2: Fast direct lidar-inertial odometry."
+[3] Yuan, C., Xu, W., Liu, X., Hong, X., & Zhang, F. "Efficient and probabilistic adaptive voxel mapping for accurate online lidar odometry."
+```
