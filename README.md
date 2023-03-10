@@ -86,7 +86,7 @@ Then, you should modify the **demo_kitti.launch** file
 ```
 cd $STD_ROS_DIR
 source deve/setup.bash
-roslaunch std_loop demo_kitti.launch
+roslaunch std_detector demo_kitti.launch
 ```
 ## **3.2. Example-2: place recognition with Livox LiDAR dataset**
 <div align="center">
@@ -101,7 +101,7 @@ Then, you should modify the **demo_livox.launch** file
 ```
 cd $STD_ROS_DIR
 source deve/setup.bash
-roslaunch std_loop demo_livox.launch
+roslaunch std_detector demo_livox.launch
 ```
 ## **3.3. Example-3: loop closure correction on the KITTI Odometry dataset**
 
@@ -119,10 +119,13 @@ Then, you should modify the **demo_pgo.launch** file
 ```
 cd $STD_ROS_DIR
 source deve/setup.bash
-roslaunch std_loop demo_pgo.launch
+roslaunch std_detector demo_pgo.launch
 ```
 
 # **Acknowledgments**
 Thanks for [Scan Context](https://github.com/irapkaist/scancontext)
 
 # **Contact Us**
+We are still working on improving the performance and reliability of our codes. For any technical issues, please contact us via email Chongjian Yuan < ycj1@connect.hku.hk >, Jiarong Lin < ziv.lin.ljr@gmail.com >.
+
+For commercial use, please contact Dr. Fu Zhang < fuzhang@hku.hk >
