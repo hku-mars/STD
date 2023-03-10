@@ -74,8 +74,8 @@ This reposity contains implementations of Stable Triangle Descriptor, as well as
 
 ## **3.1. Example-1: place recognition with KITTI Odometry dataset**
 <div align="center">
-<img src="https://github.com/ChongjianYUAN/STDesc_release/raw/master/pics/demo1/demo1_left.gif"  width="48%" />
 <img src="https://github.com/ChongjianYUAN/STDesc_release/raw/master/pics/demo1/demo1_right.gif"  width="48%" />
+<img src="https://github.com/ChongjianYUAN/STDesc_release/raw/master/pics/demo1/demo1_left.gif"  width="48%" />
 </div>
 
 To run Example-1, you need to first download the [poses file](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/ycj1_connect_hku_hk/EgnGX4jC2zxDi-45YCfbioEBpPCfBVxa2LcrE-90oL4u_A?e=Lb4Yvv) we provide.
