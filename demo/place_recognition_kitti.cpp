@@ -99,7 +99,7 @@ int main(int argc, char **argv) {
     }
 
     // check if keyframe
-    if (cloudInd % 10 == 0 && cloudInd != 0) {
+    if (cloudInd % config_setting.sub_frame_num_ == 0 && cloudInd != 0) {
       std::cout << "Key Frame id:" << keyCloudInd
                 << ", cloud size: " << temp_cloud->size() << std::endl;
       // step1. Descriptor Extraction
