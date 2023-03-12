@@ -14,6 +14,14 @@ int findPoseIndexUsingTime(std::vector<double> &time_list, double &time) {
       min_index = i;
     }
   }
+  if (time_inc > 0.5) {
+    std::string msg = "The timestamp between poses and point cloud is:" +
+                      std::to_string(time_inc) + "s. Please check it!";
+    ROS_ERROR_STREAM(msg.c_str());
+    std::cout << "Timestamp for point cloud:" << time << std::endl;
+    std::cout << "Timestamp for pose:" << time_list[min_index] << std::endl;
+    exit(-1);
+  }
   return min_index;
 }
 
