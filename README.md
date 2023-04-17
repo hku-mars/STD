@@ -123,7 +123,7 @@ source deve/setup.bash
 roslaunch std_detector demo_pgo.launch
 ```
 
-## **3.4. Example-4: online loop closure correction with FAST-LIO2 integrated
+## **3.4. Example-4: online loop closure correction with FAST-LIO2 integrated**
 To run Example-4, you need to install and configure [FAST-LIO2](https://github.com/hku-mars/FAST_LIO) first. 
 You can try the data `building_slower_motino_avia.bag` [here](https://drive.google.com/drive/folders/1EqNt6Bm_6Jf3beRf_RI3yrhiUCND09se)(provided by [zlwang7](https://github.com/zlwang7/S-FAST_LIO)), which is outdoor scan data with no loop closure other than the one between the starting point and the endpoint. Therefore, relying solely on the fast-lio algorithm results in obvious Z-axis drift, with STD loop detection and graph optimization, there will be a noticeable correction to the drift (although the result is not perfect).
 
