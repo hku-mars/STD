@@ -12,7 +12,7 @@
 
 ## **1.1. Developers:**
 The codes of this repo are contributed by:
-[Chongjian Yuan (袁崇健)](https://github.com/ChongjianYUAN) and [Jiarong Lin (林家荣)](www.jiaronglin.com)
+[Chongjian Yuan (袁崇健)](https://github.com/ChongjianYUAN) and [Jiarong Lin (林家荣)](https://jiaronglin.com)
 
 
 ## **1.2. Related paper**
@@ -123,6 +123,22 @@ source deve/setup.bash
 roslaunch std_detector demo_pgo.launch
 ```
 
+## **3.4. Example-4: online loop closure correction with FAST-LIO2 integrated**
+To run Example-4, you need to install and configure [FAST-LIO2](https://github.com/hku-mars/FAST_LIO) first. 
+You can try the data `building_slower_motino_avia.bag` [here](https://drive.google.com/drive/folders/1EqNt6Bm_6Jf3beRf_RI3yrhiUCND09se)(provided by [zlwang7](https://github.com/zlwang7/S-FAST_LIO)), which is outdoor scan data with no loop closure other than the one between the starting point and the endpoint. Therefore, relying solely on the fast-lio algorithm results in obvious Z-axis drift, with STD loop detection and graph optimization, there will be a noticeable correction to the drift (although the result is not perfect).
+
+```
+# termianl 1: run FAST-LIO2
+roslaunch fast_lio mapping_avia.launch
+
+# terminal 2: run std online demo
+roslaunch std_detector demo_online.launch
+
+# terminal 3: play data
+rosbag play building_slower_motion_avia.bag
+```
+
+
 # **Acknowledgments**
 In the development of **STD_detector**, we stand on the shoulders of the following repositories:
 
@@ -132,7 +148,7 @@ In the development of **STD_detector**, we stand on the shoulders of the followi
 - [R3LIVE](https://github.com/hku-mars/r2live): A Robust, Real-time, RGB-colored, LiDAR-Inertial-Visual tightly-coupled state Estimation and mapping package
 
 # **Contact Us**
-We are still working on improving the performance and reliability of our codes. For any technical issues, please contact us via email Chongjian Yuan < ycj1@connect.hku.hk >, Jiarong Lin < ziv.lin.ljr@gmail.com >.
+We are still working on improving the performance and reliability of our codes. For any technical issues, please contact us via email Chongjian Yuan < ycj1ATconnect.hku.hk >, Jiarong Lin < ziv.lin.ljrATgmail.com >.
 
 For commercial use, please contact Dr. Fu Zhang < fuzhang@hku.hk >
 
@@ -140,7 +156,7 @@ For commercial use, please contact Dr. Fu Zhang < fuzhang@hku.hk >
 # **License**
 The source code of this package is released under [**GPLv2**](http://www.gnu.org/licenses/) license. We only allow it free for personal and academic usage. For commercial use, please contact us to negotiate a different license.
 
-We are still working on improving the performance and reliability of our codes. For any technical issues, please contact me via email Jiarong Lin < ziv.lin.ljrATgmail.com >.
+We are still working on improving the performance and reliability of our codes. For any technical issues, please contact contact us via email Chongjian Yuan < ycj1ATconnect.hku.hk >, Jiarong Lin < ziv.lin.ljrATgmail.com >.
 
 If you use any code of this repo in your academic research, please cite **at least one** of our papers:
 ```

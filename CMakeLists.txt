@@ -82,3 +82,11 @@ target_link_libraries(pgo_demo
         ${OpenCV_LIBS} 
         ${CERES_LIBRARIES}
         gtsam)
+
+add_executable(online_demo demo/online_demo.cpp src/STDesc.cpp )
+target_link_libraries(online_demo
+        ${catkin_LIBRARIES}
+        ${PCL_LIBRARIES}
+        ${OpenCV_LIBS}
+        ${CERES_LIBRARIES}
+        gtsam)
