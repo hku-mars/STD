@@ -238,6 +238,7 @@ int main(int argc, char **argv) {
 
   std::vector<PointCloud::Ptr> cloud_vec;
   std::vector<Eigen::Affine3d> pose_vec;
+  std::vector<Eigen::Affine3d> origin_pose_vec;
   std::vector<Eigen::Affine3d> key_pose_vec;
   std::vector<std::pair<int, int>> loop_container;
 
@@ -262,6 +263,7 @@ int main(int argc, char **argv) {
       down_sampling_voxel(*current_cloud_body, 0.5);
       cloud_vec.push_back(current_cloud_body);
       pose_vec.push_back(pose);
+      origin_pose_vec.push_back(pose);
       PointCloud origin_cloud;
       pcl::transformPointCloud(*current_cloud_body, origin_cloud,
                                origin_estimate_affine3d);
@@ -289,12 +291,11 @@ int main(int argc, char **argv) {
         graph.add(gtsam::PriorFactor<gtsam::Pose3>(
             0, gtsam::Pose3(pose.matrix()), odometryNoise));
       } else {
-        auto prev_pose = gtsam::Pose3(last_pose.matrix());
+        auto prev_pose = gtsam::Pose3(origin_pose_vec[cloudInd - 1].matrix());
         auto curr_pose = gtsam::Pose3(pose.matrix());
         graph.add(gtsam::BetweenFactor<gtsam::Pose3>(
             cloudInd - 1, cloudInd, prev_pose.between(curr_pose),
             odometryNoise));
-        last_pose = pose;
       }
 
       // check if keyframe
@@ -369,7 +370,9 @@ int main(int argc, char **argv) {
             Eigen::Affine3d src_pose_refined = delta_T * pose_vec[src_frame];
 
             int tar_frame = match_frame * sub_frame_num + j;
-            Eigen::Affine3d tar_pose = pose_vec[tar_frame];
+            // old
+            // Eigen::Affine3d tar_pose = pose_vec[tar_frame];
+            Eigen::Affine3d tar_pose = origin_pose_vec[tar_frame];
 
             loop_container.push_back({tar_frame, src_frame});
 
