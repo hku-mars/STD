@@ -367,7 +367,7 @@ int main(int argc, char **argv) {
             auto delta_T = Eigen::Affine3d::Identity();
             delta_T.translate(loop_transform.first);
             delta_T.rotate(loop_transform.second);
-            Eigen::Affine3d src_pose_refined = delta_T * pose_vec[src_frame];
+            Eigen::Affine3d src_pose_refined = delta_T * origin_pose_vec[src_frame];
 
             int tar_frame = match_frame * sub_frame_num + j;
             // old
